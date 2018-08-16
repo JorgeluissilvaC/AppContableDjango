@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h2>Detalle de ténico</h2>
+{% if technician %}
+    <div>
+        <table>
+            <tr>
+                <th>Indentificación: </th>
+                <td>{{ technician.id_person }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ technician.name }}</td>
+            </tr>
+            <tr>
+            <tr>
+                <th>Télefono</th>
+                <td>{{technician.phone}}</td>
+            </tr>
+            <tr>
+                <th>Dirección</th>
+                <td>{{technician.address}}</td>
+            </tr>
+        </table>     
+    </div>
+{% endif %}
+{% endblock %}

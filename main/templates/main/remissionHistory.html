@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h2>Historial de remisiones</h2>
+
+<div>
+    <form action="/remissionHistory" method="get" id="searchform">
+        <input name="q" type="text" placeholder="Buscar aquí..." value="{{query}}" required>
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+
+
+{% if info %}
+
+
+    <table>
+            <tr>
+              <th>Remisión</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Fecha de servicio</th>
+              <th>Técnico</th>
+              <th>Estado</th>
+            </tr>
+
+            {% for a in info %}
+            <tr>
+                <td><a href="/remission/{{a.remission}}/">{{a.remission}}</a></td>
+                <td>{{a.date}}</td>
+                <td><a href="/customer/{{a.customer.CCNIT}}/">{{a.customer.name}}</a></td>
+                <td>{{a.dateService}}</td>
+                <td><a href="/technician/{{a.technician.id_person}}/">{{a.technician.name}}</a></td>
+                <td>{{a.stateRemission}}</td>
+            </tr>
+            {% endfor %}
+            
+          </table>
+{% endif %}
+{% endblock %}

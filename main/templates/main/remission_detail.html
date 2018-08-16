@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h2>Detalle de remisión</h2>
+{% if remission %}
+    <div>
+        <table>
+            <tr>
+                <th>Número de remisión: </th>
+                <td>{{ remission.remission }}</td>
+            </tr>
+            <tr>
+                <th>Fecha de remisión</th>
+                <td>{{ remission.date }}</td>
+            </tr>
+            <tr>
+            <tr>
+                <th>Nombre de cliente:</th>
+                <td>{{remission.customer}}</td>
+            </tr>
+            <tr>
+                <th>Fecha de servicio</th>
+                <td>{{remission.dateService}}</td>
+            </tr>
+            <tr>
+                    <th>Técnico asignado</th>
+                    <td>{{remission.technician}}</td>
+            </tr>
+            <tr>
+                    <th>Observación</th>
+                    <td>{{remission.Observation}}</td>
+            </tr>
+            <tr>
+                    <th>Estado de remision</th>
+                    <td>{{remission.stateRemission}}</td>
+            </tr>
+        </table>     
+    </div>
+    <h2>Servicios contratados</h2>
+    {% for b in remision.service %}
+    <p>b.ID_service</p>
+    <p>b.service</p>
+    <p>b.value</p>
+    {% endfor %}
+{% endif %}
+{% endblock %}

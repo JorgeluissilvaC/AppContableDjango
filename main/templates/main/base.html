@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AppContable</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+
+        <!--  Scripts-->
+
+    </head>
+
+    <body>
+        <header>
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu">
+                <img src="{% static 'image/img_menu.png' %}" alt="menu">
+            </label>
+            <nav class="menu">
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/newCustomer">Nuevo cliente</a></li>
+                    <li><a href="/newTechnician">Nuevo Técnico</a></li>
+                    <li><a href="/configuration">Configuraciones</a></li>
+
+                </ul>
+            </nav>
+        </header>
+        {% if messages %}
+        <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+                {% block content %}
+                {% endblock %}
+                <script src="{% static 'js/jquery-3.3.1.js'%}"></script>
+                <script src="{% static 'js/main.js'%}"></script>
+            </body>
+
+</html>

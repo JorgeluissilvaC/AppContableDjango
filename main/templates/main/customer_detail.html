@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h2>Detalle de cliente</h2>
+{% if customer %}
+    <div>
+        <table>
+            <tr>
+                <th>Nombre: </th>
+                <td>{{ customer.name }}</td>
+            </tr>
+            <tr>
+                <th>Indentificación</th>
+                <td>{{ customer.CCNIT }}</td>
+            </tr>
+            <tr>
+            <tr>
+                <th>Departamento</th>
+                <td>{{customer.Department}}</td>
+            </tr>
+            <tr>
+                <th>Ciudad</th>
+                <td>{{customer.city}}</td>
+            </tr>
+            <tr>
+                    <th>Dirección</th>
+                    <td>{{customer.address}}</td>
+            </tr>
+            <tr>
+                <th>Celular</th>
+                <td>{{customer.cell}}</td>
+            </tr>
+            <tr>
+                <th>Télefono</th>
+                <td>{{customer.phone}}</td>
+            </tr>
+            <tr>
+                <th>Extención</th>
+                <td>{{customer.ext}}</td>
+            </tr>
+        </table>     
+    </div>
+{% endif %}
+{% endblock %}

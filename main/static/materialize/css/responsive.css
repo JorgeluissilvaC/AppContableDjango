@@ -1,0 +1,163 @@
+#searchform {
+    width: 380px;
+  height:50px;
+  margin:50px auto;
+  padding: 10px;
+    background: #79554885;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 2px 0 rgba(255,255,255,.5);
+}
+
+#searchform input {
+    width: 270px;
+  height:20px;
+    padding: 5px;
+    float: left;
+    border: 0;
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.4) inset;
+}
+
+#searchform input:focus {
+    outline: 0;
+  height:21px;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+
+#searchform input:-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+   font-style: italic;
+}
+
+#searchform input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#searchform input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+}    
+
+#searchform button {
+    position: relative;
+    float: right;
+    border: 0;
+    cursor: pointer;
+    height: 30px;
+    width: 80px;
+    font-size:15px;
+    color: #fff;
+    background: #8e7b50;
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+}   
+
+#searchform button:hover{
+    background: #8e7b50c4;
+} 
+
+#searchform button:active,
+#searchform button:focus{
+    background: #8e7b50c4;
+}
+
+#searchform button:before { /* flecha */
+    content: '';
+    position: absolute;
+    border-width: 8px 8px 8px 0;
+    border-style: solid solid solid none;
+    border-color: transparent #8e7b50 transparent;
+    top: 8px;
+    left: -5px;
+}
+
+#searchform button:hover:before{
+    border-right-color: #8e7b50c4;
+}
+
+#searchform button:focus:before{
+    border-right-color: #8e7b50;
+}    
+ .titulo{
+      font-size: 100px;
+      font-family: 'Amatic SC', cursive;
+    }
+
+.icenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 13%;   
+}
+.iicenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;   
+}
+.logTEXT{
+  font-size: 35px; 
+}
+
+.justify_text_content{
+    text-align:justify;  
+    text-justify:auto;
+}
+
+.regEmpre{
+  font-family: 'Amatic SC', cursive;
+}
+.log{
+  width: 7%; 
+  font-size: 50px; 
+  vertical-align: middle;
+}
+.inves{
+  font-family: 'Julius Sans One', sans-serif;
+}
+.iinves{
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
+.read_font{
+  font-family: 'Dosis', sans-serif;
+  font-size: 24px;
+  font-style: 'Regular';
+
+}
+
+  @media (max-width: 600px) {
+    .titulo{
+      font-size: 50px;
+
+    }
+    .cell{
+      font-size: 20px;
+    }
+    .regEmpre{
+       font-size: 30px;
+    }
+   .cell1{
+      font-size: 15px;
+    }
+   .cell2{
+      font-size: 15px;
+    }
+   .cell3{
+      font-size: 20px;
+    }
+   .cell4{
+      font-size: 10px;
+    }
+    .icenter{
+    width: 15%;
+        
+    }
+
+  }
