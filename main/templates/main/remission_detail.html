@@ -37,10 +37,10 @@
         </table>     
     </div>
     <h2>Servicios contratados</h2>
-    {% for b in remision.service %}
-    <p>b.ID_service</p>
-    <p>b.service</p>
-    <p>b.value</p>
+    {% for b in services %}
+    <p>{{b.ID_service}}</p>
+    <p>{{b.service}}</p>
+    <input type="text" value="{{b.value}}"> 
     {% endfor %}
 {% endif %}
 {% endblock %}

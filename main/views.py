@@ -25,7 +25,7 @@ def newService(request):
 	if request.method == "POST":
 		form = newServiceForm(request.POST)
 		if form.is_valid():
-			customer = form.save(commit=False)
+			customer = form.save()
 			customer.save()
 			messages.success(request,'Servicio almacenado')
 			return render(request, 'main/main.html')
@@ -88,5 +88,6 @@ def technician_detail(request,pk):
 
 def remission_detail(request,pk):
     remission = get_object_or_404(registeredServices, remission=pk)
-    return render(request, 'main/remission_detail.html', {'remission': remission})
+    services = remission.service.all()
+    return render(request, 'main/remission_detail.html', {'remission' : remission , 'services' : services})
 
