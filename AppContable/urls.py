@@ -6,6 +6,6 @@ urlpatterns = [
     # url(r'^$', 'AppContable.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url('^admin/', include(admin.site.urls)),
+    url('^admin/', admin.site.urls),
     url('', include('main.urls')),
 ]
