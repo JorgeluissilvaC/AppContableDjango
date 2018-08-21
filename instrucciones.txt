@@ -1,0 +1,28 @@
+Creating a virtual environment:
+C:\Python34\python -m venv myvenv
+Activar Ambiente virtual:
+myvenv\Scripts\activate
+pip freeze
+pip install django
+New proyect:
+django-admin startproject mysite .
+TIME_ZONE = 'America/Bogota'
+   STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+from django.core.wsgi import get_wsgi_application
+from django.contrib.staticfiles.handlers import StaticFilesHandler
+application = StaticFilesHandler(get_wsgi_application())
+
+Do migations 
+python manage.py makemigrations main
+python manage.py migrate
+Create App inside main app 
+python manage.py startapp blog
+Save changes on a model 
+python manage.py makemigrations blog
+python manage.py migrate blog
+put on the admin the model that was created. 
+Create a superUser
+python manage.py createsuperuser
+python manage.py collectstatic
