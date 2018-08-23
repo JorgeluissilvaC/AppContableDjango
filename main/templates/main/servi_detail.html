@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h2>Detalle de servicio</h2>
+{% if remission %}
+    <div>
+        <table>
+                <form action="/SaveServi" method="get" id="saveForm">
+                <td><input type="text" name="IDD" style="display: none;" value="{{remission.IDD}}"></td>           
+            <tr>
+                <th>ID</th>
+                <td><input type="text" name="ID_service"  value="{{ remission.ID_service }}"></td>
+            </tr>
+            <tr>
+            <tr>
+                <th>Servicio</th>
+                <td><input type="text" name="service"  value="{{remission.service}}"></td>
+            </tr>
+            <tr>
+                <th>Costo</th>
+                <td><input type="text" name="value"  value="{{remission.value}}"><br>
+                <button type="submit">Guardar</button> </td>
+            </tr>
+        </table>     
+    </div>
+{% endif %}
+{% endblock %}

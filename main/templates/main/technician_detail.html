@@ -5,22 +5,25 @@
 {% if technician %}
     <div>
         <table>
+                <form action="/SaveTecnician" method="get" id="saveForm">
+                <td><input type="text" name="IDD" style="display: none;" value="{{technician.IDD}}"></td>           
             <tr>
                 <th>Indentificación: </th>
-                <td>{{ technician.id_person }}</td>
+                <td><input type="text" name="id_person"  value="{{ technician.id_person }}"></td>
             </tr>
             <tr>
                 <th>Nombre</th>
-                <td>{{ technician.name }}</td>
+                <td><input type="text" name="name"  value="{{ technician.name }}"></td>
             </tr>
             <tr>
             <tr>
                 <th>Télefono</th>
-                <td>{{technician.phone}}</td>
+                <td><input type="text" name="phone"  value="{{technician.phone}}"></td>
             </tr>
             <tr>
                 <th>Dirección</th>
-                <td>{{technician.address}}</td>
+                <td><input type="text" name="address"  value="{{technician.address}}"><br>
+                <button type="submit">Guardar</button> </td>
             </tr>
         </table>     
     </div>

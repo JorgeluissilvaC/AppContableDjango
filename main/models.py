@@ -3,6 +3,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Technicians(models.Model):
+    IDD = models.AutoField(primary_key=True)
     id_person = models.CharField(max_length=200,unique=True)
     name = models.CharField(max_length=200)
     phone = models.CharField(max_length=200)
@@ -14,6 +15,7 @@ class Technicians(models.Model):
         ordering = ('name',)
 
 class customers(models.Model):
+    IDD = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     CCNIT = models.CharField(max_length=200,unique=True)
     Department = models.CharField(max_length=200)
@@ -30,6 +32,7 @@ class customers(models.Model):
         ordering = ('name',)
 
 class Services(models.Model):
+    IDD = models.AutoField(primary_key=True)
     ID_service = models.CharField(max_length=200,unique=True)
     service = models.CharField(max_length=200)
     value = models.FloatField()
@@ -41,6 +44,7 @@ class Services(models.Model):
         ordering = ('service',)    
 
 class registeredServices(models.Model):
+    IDD = models.AutoField(primary_key=True)
     remission = models.CharField(max_length=200,unique=True)
     billNum = models.CharField(max_length=200,blank=True,default=' ')
     dateBill = models.DateTimeField(blank=True, null=True)
@@ -60,6 +64,7 @@ class registeredServices(models.Model):
 
 
 class SpecificServices(models.Model):
+    IDD = models.AutoField(primary_key=True)
     remission = models.ForeignKey(registeredServices, on_delete=models.CASCADE)
     amount = models.IntegerField()
     service = models.ForeignKey(Services, on_delete=models.CASCADE)

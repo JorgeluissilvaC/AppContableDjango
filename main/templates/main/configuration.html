@@ -3,46 +3,50 @@
 
 
 <h2>Configuraciones</h2>
-<div class="selector">
-<form>
-    <fieldset>
-        <legend>Seleccione la dependencia a configurar</legend>
-            <div>
-                <input type="radio" id="customer" name="drone" checked />
-                <label for="customer">Clientes</label>
-            </div>
-            <div>
-                <input type="radio" id="technician" name="drone" />
-                <label for="technician">Técnicos</label>
-            </div>
-            <div>
-                <input type="radio" id="services" name="drone" />
-                <label for="services">Servicios o insumos</label>
-            </div>
-    </fieldset>
-</form>
-    
-    <label for="factura">Valor inicial de facturas</label>
-    <input type="text" id="factura" />
-</div>
-<div id="details">
-    <div id="customer"> 
-        <form action="/remissionHistory" method="get" id="searchform">
-            <input name="q" type="text" placeholder="Buscar aquí..." value="{{query}}" required>
-            <button type="submit">Buscar</button>
-        </form>
+<div class="divi">
+    <div id="selector">
+
+        <fieldset>
+            <legend>Seleccione la dependencia a configurar</legend>
+                <div>
+                    <input type="radio" id="customer" name="drone" checked />
+                    <label for="customer"><a href="/customerList">Clientes</a> </label>
+                </div>
+                <div>
+                    <input type="radio" id="technician" name="drone" />
+                    <label for="technician"><a href="/technicianList">Técnicos</a></label>
+                </div>
+                <div>
+                    <input type="radio" id="services" name="drone" />
+                    <label for="services"><a href="/servicesList">Servicios o insumos</a></label>
+                </div>
+        </fieldset>
+    <form name="sele">
+        <label for="factura">Valor inicial de facturas</label>
+        <input type="text" id="factura" />
+        <button type="submit">Guardar</button>
+    </form>
+
     </div>
-    <div id="technician">
-        <form action="/remissionHistory" method="get" id="searchform">
-            <input name="q" type="text" placeholder="Buscar aquí..." value="{{query}}" required>
-            <button type="submit">Buscar</button>
-        </form>
-    </div>
-    <div id="services">
-        <form action="/remissionHistory" method="get" id="searchform">
-            <input name="q" type="text" placeholder="Buscar aquí..." value="{{query}}" required>
-            <button type="submit">Buscar</button>
-        </form>
+    <div id="details">
+        <div id="custome"> 
+            <form action="/remissionHistory" method="get" id="searchform">
+                <input name="q" type="text" placeholder="Buscar aquí sus clientes" value="{{query}}" required>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <div id="technicia">
+            <form action="/remissionHistory" method="get" id="searchform">
+                <input name="q" type="text" placeholder="Buscar aquí sus técnicos" value="{{query}}" required>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <div id="service">
+            <form action="/remissionHistory" method="get" id="searchform">
+                <input name="q" type="text" placeholder="Buscar aquí sus servicios" value="{{query}}" required>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

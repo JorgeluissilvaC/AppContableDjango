@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h2>Lista de clientes</h2>
+
+<div>
+    <form action="/customerList" method="get" id="searchform">
+        <input name="q" type="text" placeholder="Buscar aquí sus clientes" value="{{query}}" required>
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+{% if info %}
+    <table>
+            <tr>
+              <th>Nombre</th>
+              <th>CC o NIT</th>
+              <th>Departamento</th>
+              <th>Ciudad</th>
+              <th>Direeción</th>
+              <th>Celular</th>
+              <th>Télefono</th>
+              <th>Ext</th>
+            </tr>
+            {% for a in info %}
+            <tr>
+                <td>{{a.name}}</td>
+                <td>{{a.CCNIT}}</td>
+                <td>{{a.Department}}</td>
+                <td>{{a.city}}</td>
+                <td>{{a.address}}</td>
+                <td>{{a.cell}}</td>
+                <td>{{a.phone}}</td>
+                <td>{{a.ext}}</td>
+                <td><a href="/customer/{{a.CCNIT}}">Editar</a></td>
+                <td><a href="">Eliminar</a></td>
+
+            </tr>
+            {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}

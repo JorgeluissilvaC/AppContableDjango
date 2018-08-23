@@ -5,40 +5,46 @@
 {% if customer %}
     <div>
         <table>
+            <form action="/SaveCustomer" method="get" id="saveForm">
+                <td><input type="text" name="IDD" style="display: none;" value="{{customer.IDD}}"></td>           
             <tr>
                 <th>Nombre: </th>
-                <td>{{ customer.name }}</td>
+                <td><input type="text" name="name"  value="{{customer.name}}"></td>
             </tr>
             <tr>
                 <th>Indentificación</th>
-                <td>{{ customer.CCNIT }}</td>
+                <td><input type="text" name="CCNIT"  value="{{ customer.CCNIT }}"></td>
             </tr>
             <tr>
             <tr>
                 <th>Departamento</th>
-                <td>{{customer.Department}}</td>
+                <td><input type="text" name="Department"  value="{{customer.Department}}"></td>
             </tr>
             <tr>
                 <th>Ciudad</th>
-                <td>{{customer.city}}</td>
+                <td><input type="text" name="city"  value="{{customer.city}}"></td>
             </tr>
             <tr>
                     <th>Dirección</th>
-                    <td>{{customer.address}}</td>
+                    <td><input type="text" name="address"  value="{{customer.address}}"></td>
             </tr>
             <tr>
                 <th>Celular</th>
-                <td>{{customer.cell}}</td>
+                <td><input type="text" name="cell"  value="{{customer.cell}}"></td>
             </tr>
             <tr>
                 <th>Télefono</th>
-                <td>{{customer.phone}}</td>
+                <td><input type="text" name="phone"  value="{{customer.phone}}"></td>
             </tr>
             <tr>
                 <th>Extención</th>
-                <td>{{customer.ext}}</td>
+                <td><input type="text" name="ext"  value="{{customer.ext}}"><br>
+                <button type="submit">Guardar</button> 
+                </td>
             </tr>
-        </table>     
+           
+        </form>  
+        </table>  
     </div>
 {% endif %}
 {% endblock %}

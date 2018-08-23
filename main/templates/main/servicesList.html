@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h2>Lista de Servicios</h2>
+
+<div>
+    <form action="/customerList" method="get" id="searchform">
+        <input name="q" type="text" placeholder="Buscar aquí sus servicios a prestar" value="{{query}}" required>
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+{% if info %}
+    <table>
+            <tr>
+              <th>ID de servicio</th>
+              <th>Servicio</th>
+              <th>Valor</th>
+            </tr>
+            {% for a in info %}
+            <tr>
+                <td>{{a.ID_service}}</td>
+                <td>{{a.service}}</td>
+                <td>{{a.value}}</td>
+                <td><a href="/servi/{{a.ID_service}}">Editar</a></td>
+                <td><a href="">Eliminar</a></td>
+
+            </tr>
+            {% endfor %}
+    </table>
+{% endif %}
+{% endblock %}
