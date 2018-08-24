@@ -8,6 +8,19 @@ from django.shortcuts import render, get_object_or_404
 
 def main(request):
     return render(request, 'main/main.html', {})
+def delete(request):
+	if request.method == "GET":
+		IDD = request.GET.get('IDD')
+		tipo = request.GET.get('tipo')
+		if tipo=='1':
+			custo = get_object_or_404(Services, IDD=IDD)
+		if tipo=='2':
+			custo = get_object_or_404(customers, IDD=IDD)
+		if tipo=='3':
+			custo = get_object_or_404(Technicians, IDD=IDD)
+
+		custo.delete()
+		messages.success(request,'Información borrada')
 
 def SaveServi(request):
 	if request.method == "GET":
@@ -72,7 +85,7 @@ def technicianList(request):
 def servicesList(request):
 	query = request.GET.get('q')
 	if query:
-		info = Services.objects.filter(name__icontains=query)
+		info = Services.objects.filter(ID_service__icontains=query)
 		return render(request, 'main/servicesList.html', {'info':info})
 
 	info = Services.objects.all()

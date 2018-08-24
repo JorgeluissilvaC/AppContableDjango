@@ -4,7 +4,7 @@
 <h2>Lista de Servicios</h2>
 
 <div>
-    <form action="/customerList" method="get" id="searchform">
+    <form action="/servicesList" method="get" id="searchform">
         <input name="q" type="text" placeholder="Buscar aquí sus servicios a prestar" value="{{query}}" required>
         <button type="submit">Buscar</button>
     </form>
@@ -22,8 +22,7 @@
                 <td>{{a.service}}</td>
                 <td>{{a.value}}</td>
                 <td><a href="/servi/{{a.ID_service}}">Editar</a></td>
-                <td><a href="">Eliminar</a></td>
-
+                <td><a id="{{a.IDD}}"  onclick="sure(this.id)" name="1" href="/">Eliminar</a></td>
             </tr>
             {% endfor %}
     </table>

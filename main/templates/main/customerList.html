@@ -32,8 +32,7 @@
                 <td>{{a.phone}}</td>
                 <td>{{a.ext}}</td>
                 <td><a href="/customer/{{a.CCNIT}}">Editar</a></td>
-                <td><a href="">Eliminar</a></td>
-
+                <td><a id="{{a.IDD}}"  onclick="sure(this.id)" name="2" href="/">Eliminar</a></td>
             </tr>
             {% endfor %}
     </table>

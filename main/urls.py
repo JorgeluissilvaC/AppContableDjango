@@ -20,8 +20,7 @@ urlpatterns = [
     url(r'^SaveCustomer/$', views.SaveCustomer),
     url(r'^SaveTecnician/$', views.SaveTecnician),
     url(r'^SaveServi/$', views.SaveServi),
-
-
+    url(r'^delete/$', views.delete),
 
     url(r'^customerList/$', views.customerList),
     url(r'^technicianList/$', views.technicianList),

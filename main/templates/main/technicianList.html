@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 {% block content %}
 
-<h2>Lista de ténicos</h2>
+<h2>Lista de técnicos</h2>
 
 <div>
     <form action="/customerList" method="get" id="searchform">
@@ -24,8 +24,7 @@
                 <td>{{a.phone}}</td>
                 <td>{{a.address}}</td>
                 <td><a href="/technician/{{a.id_person}}">Editar</a></td>
-                <td><a onclick="sure()" href="/">Eliminar</a></td>
-
+                <td><a id="{{a.IDD}}"  onclick="sure(this.id)" name="3" href="/">Eliminar</a></td>
             </tr>
             {% endfor %}
     </table>

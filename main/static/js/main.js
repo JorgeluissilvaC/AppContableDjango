@@ -10,6 +10,8 @@ $('#items').append( '<div><input type="text" name="amount">'
 $('body').on('click','#delete',function(e){
     $(this).parent('div').remove();
 })
+
+
 $('#custome').hide();
 $('#technicia').hide();
 $('#service').hide();
@@ -35,23 +37,16 @@ $('#service').hide();
 });
 
 
-function sure(cas) {
-    var txt;
+function sure(id) {
+    let cas = document.getElementById(id).name;
+    var params = "IDD="+id+"&tipo="+cas+"";
     var r = confirm("Desea eliminar la información!");
     if (r == true) {
-        if(cas===1){
             var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", "/delete");
-            window.replace("/");
-        }
-        if(cas===2){
-
-        }
-        if(cas===3){
-
-        }                
-    } else {
-        
+            xmlHttp.open( "GET", "/delete/?"+params);
+            xmlHttp.send( null );
+            alert("Información eliminada!");  
+    }else{
+        alert("La información no fue eliminada");
     }
-
 }
