@@ -38,7 +38,8 @@ class Services(models.Model):
     value = models.FloatField()
 
     def __str__(self):
-        return self.service
+        strr = self.ID_service+' '+self.service+' '+str(self.value)
+        return strr
 
     class Meta:
         ordering = ('service',)    

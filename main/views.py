@@ -18,7 +18,6 @@ def delete(request):
 			custo = get_object_or_404(customers, IDD=IDD)
 		if tipo=='3':
 			custo = get_object_or_404(Technicians, IDD=IDD)
-
 		custo.delete()
 		messages.success(request,'Información borrada')
 
@@ -104,6 +103,7 @@ def newServi(request):
 	return render(request, 'main/newServi.html', {'form': form})
 
 def newService(request):
+	servv = Services.objects.all()
 	if request.method == "POST":
 		form = newServiceForm(request.POST)
 		if form.is_valid():
@@ -113,8 +113,7 @@ def newService(request):
 			return render(request, 'main/main.html')
 	else:
 		form = newServiceForm()
-		services = Services.objects.all()
-	return render(request, 'main/newService.html', {'form': form})
+	return render(request, 'main/newService.html', {'form': form,'servv':servv})
 
 def newCustomer(request):
 	if request.method == "POST":

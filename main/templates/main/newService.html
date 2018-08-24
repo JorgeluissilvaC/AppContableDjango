@@ -3,8 +3,57 @@
 
 <h2>Ingresar nuevo Servicio</h2>
 <form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
+        <p>
+            {{ form.remission.errors }}
+            <label for="{{ form.remission.id_for_label }}">Numero de remisión:</label> 
+            {{ form.remission }}
+        </p>
+
+        <p>
+            {{ form.date.errors }}
+            <label for="{{ form.date.id_for_label }}">Fecha de emisión:</label>         
+            {{ form.date}}
+        </p>
+        <p>
+            {{ form.customer.errors }}
+            <label for="{{ form.customer.id_for_label }}">Cliente:</label> 
+            {{ form.customer }}
+        </p>
+        <p>
+            {{ form.dateService.errors }}
+            <label for="{{ form.dateService.id_for_label }}">Fecha de servicio:</label> 
+             {{ form.dateService }}
+        </p>
+        <p>
+              {{ form.technician.errors }}
+              <label for="{{ form.technician.id_for_label }}">Técnico:</label> 
+               {{ form.technician }}
+        </p>
+        <p>
+            {{ form.Observation.errors }}
+            <label for="{{ form.Observation.id_for_label }}">Observación:</label> 
+            {{ form.Observation }}
+        </p>
+        <p>
+            {{ form.stateRemission.errors }}
+            <label for="{{ form.stateRemission.id_for_label }}">Estado de remisión:</label> 
+            {{ form.stateRemission }}
+        </p>
     <button type="submit" class="save btn btn-default">Guardar</button>
 </form>
+
+
+
+
+    {% if servv %}
+            <label for="id_service">Servicios:</label> 
+            <select multiple="multiple" id="id_service" name="service">
+                {% for a in servv %}
+                <option value="{{a.ID_service}} {{a.service}} {{a.value}}">{{a.service}} </option>
+                {% endfor %}
+            </select>
+    {% endif %}
+    <button id="add"> Agregar </button>
+    <div id="items"></div>
 {% endblock %}
 
